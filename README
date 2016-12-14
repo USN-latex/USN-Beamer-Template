@@ -1,6 +1,6 @@
 This is a style for creating HSN-presentations with the Beamer package and pdfLaTeX.
 
-As a minimum, copy the files beamerthemehsn.sty and hsnlogo to
+As a minimum, copy the files beamerthemehsn.sty and hsnlogo.pdf to
 the directory where you work on your presentation. As an alternative,
 install them at the common place such files on  your system.
 
