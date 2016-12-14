@@ -1,9 +1,9 @@
 # Beamer-Template
 HSN template for presentations made using the package Beamer with pdfLaTeX
 
-As a minimum, copy the directory gfx and the file beamerthemehsn.sty to
+As a minimum, copy the files beamerthemehsn.sty and hsnlogo.pdf to
 the directory where you work on your presentation. As an alternative,
-install them at the common place appropriate for your system.
+install them at the common place appropriate for such files on your system.
 
 ## Files
 <table>
