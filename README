@@ -1,0 +1,13 @@
+This is a style for creating HSN-presentations with the Beamer package and pdflatex.
+
+As a minimum, copy the directory gfx and the file beamerthemehsn.sty to
+the directory where you work on your presentation. As an alternative,
+install them at the common place appropriate for your system.
+
+The files are:
+
+README                This file
+hsnlogo.pdf           The logo of HSN
+beamerthemehsn.sty    Style file for HSN presentation
+hsntemplate.tex       An example presentation that can be used as template
+hsntemplate.pdf       The pdf resulting from compiling hsntemplate.tex
