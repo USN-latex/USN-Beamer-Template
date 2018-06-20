@@ -1,4 +1,4 @@
-# Beamer-Template
+# USN Beamer-Template
 USN template for presentations made using the package Beamer with pdfLaTeX
 
 As a minimum, copy the files beamerthemeusn.sty and usnlogo.pdf to
