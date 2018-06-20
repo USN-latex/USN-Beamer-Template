@@ -1,0 +1,93 @@
+\documentclass[aspectratio=169]{beamer}
+% Use aspectration=43 for, surprise, 4:3 aspect ratio
+% Class options include: notes, notesonly, handout, trans,
+%                        hidesubsections, shadesubsections,
+%                        inrow, blue, red, grey, brown
+
+\usetheme{usn}
+%\usepackage[]{cite}
+%\usepackage{subfig}
+\usepackage{graphicx}
+%\usepackage{pdfpages}
+%\usepackage{epstopdf}
+\setlength{\parindent}{0pt}
+
+\title{This is a Title}
+\subtitle{This is a subtitle}
+\author{A. U. Thor}  
+\institute[USN]{Department of This and That \\ University of South-Eastern Norway, Campus NN, NN, Norway}
+\date{\today}
+
+\begin{document}
+% Creates title page of slide show using above information
+\usntitlepage
+
+%%\section[Outline]{}
+%% Creates table of contents slide incorporating
+%% all \section and \subsection commands
+%\begin{frame}
+%\frametitle{Outline}
+%  \tableofcontents
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+%%%%%%%%%%%%
+\begin{frame}
+\frametitle{The first page of the presentation}
+\begin{itemize}
+\item Here's a bullet point
+\begin{itemize}
+\item The second bullet point is here 
+\item A third bullet point might appear here
+\begin{itemize}
+\item The fourth bullet point of this amazing list
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fonts}
+\begin{itemize}
+\item The university design manual states \textit{Times New Roman} and \textit{Calibri} to be used with Office-tools which Latex isn't.  
+\begin{itemize}
+\item \textit{Times Roman} makes ``$v$'' looks like the greek ``$\nu$'' in math mode. 
+\item \textit{Calibri} is awkward to use with pdflatex 
+\end{itemize}
+\item Default fonts are therefore \textit{Computer Modern}
+\item A change might be in order for a later version 
+\end{itemize}
+\vspace{5mm}
+
+Math is typeset like this:
+\begin{eqnarray}
+-\frac{\partial}{\partial x}\left(vp\right)
++\frac{1}{m}\frac{\partial}{\partial v}\left[\left( \frac{\partial U_\mathrm{T}}{\partial x} +bv-F_\mathrm{s}\right)p\right] \nonumber \\
++\frac{1}{R}\frac{\partial}{\partial q}\left( \frac{\partial U_\mathrm{T}}{\partial q}p\right)
++ \frac{S_\mathrm{a}}{2}\frac{\partial^2p}{\partial v^2} & = & 0 \nonumber
+\end{eqnarray}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Predefined colours}
+
+\centering
+
+\begin{tabular}{lll}  
+  {\color{PMS2369U}\rule{4em}{2ex}} PMS2369U & &  {\color{PMS2332U}\rule{4em}{2ex}} PMS2332U \\
+  {\color{PMS200U}\rule{4em}{2ex}} PMS200U &  &  {\color{PMS2331U}\rule{4em}{2ex}} PMS2331U \\
+  {\color{PMS120U}\rule{4em}{2ex}} PMS120U &  & {\color{PMS434U}\rule{4em}{2ex}} PMS434U \\
+  {\color{PMS312U}\rule{4em}{2ex}} PMS312U &  {\color{PMS3005U}\rule{4em}{2ex}} PMS3005U & {\color{PMS444U}\rule{4em}{2ex}}  PMS444U \\ 
+   &   {\color{PMS310U}\rule{4em}{2ex}} PMS310U & {\color{PMS442U}\rule{4em}{2ex}}  PMS442U \\ 
+  {\color{PMS2400U}\rule{4em}{2ex}} PMS2400U &  {\color{PMS327U}\rule{4em}{2ex}} PMS327U & {\color{PMS538U}\rule{4em}{2ex}}  PMS538U \\
+  &  {\color{PMS358U}\rule{4em}{2ex}} PMS358U  &   
+\end{tabular}
+
+\end{frame}
+
+\end{document}
