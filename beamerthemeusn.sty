@@ -1,5 +1,4 @@
-\ProvidesClass{beamerthemehsn}[2016/12/14]
-
+\ProvidesClass{beamerthemeusn}[2018/06/25]
 
 \mode<presentation>
 
@@ -7,10 +6,9 @@
 \RequirePackage[authoryear,round]{natbib}
 \RequirePackage{xcolor}
 \RequirePackage{textcomp}
-%\usepackage[authoryear,round]{natbib}
 
-%%  colours
 % signal colors
+%%  colors
 \definecolor{PMS2369U}{RGB}{70,70,165}
 \definecolor{PMS200U}{RGB}{214,67,73}
 \definecolor{PMS120U}{RGB}{255,210,64}
@@ -21,25 +19,26 @@
 \definecolor{PMS310U}{RGB}{154,212,226}
 \definecolor{PMS327U}{RGB}{0,151,138}
 \definecolor{PMS358U}{RGB}{157,210,159}
-% additional colors 
+% additional colors
 \definecolor{PMS2332U}{RGB}{140,150,150}
 \definecolor{PMS2331U}{RGB}{175,182,179}
 \definecolor{PMS434U}{RGB}{210,215,215}
 \definecolor{PMS444U}{RGB}{126,148,146}
 \definecolor{PMS442U}{RGB}{166,182,179}
 \definecolor{PMS538U}{RGB}{200,215,215}
-%special color
-% no RGB for Copper color
+% special color
+\definecolor{PMS876}{RGB}{148,102,75} % copper
+
 
 \setbeamercolor{frametitle}{fg=black}
 \setbeamercolor{title}{fg=black}
 \setbeamercolor{subtitle}{fg=black}
 \setbeamercolor{item}{fg=black}
 
-\setbeamercolor{footline}{bg=white,fg=black}%bg=red}
+\setbeamercolor{footline}{bg=white,fg=black}
 \setbeamerfont{footline}{size=\tiny}
 
-%% some useful lengths 
+%% some useful lengths
 \newlength{\usnspacing}
 \setlength{\usnspacing}{0.032\paperheight}
 \newlength{\usnrulewidth}
@@ -55,12 +54,21 @@
 %% turn off all navigation symbols
 \setbeamertemplate{navigation symbols}{}
 
-%% load pictures that are used one several slides
-\pgfdeclareimage[height=0.21\paperheight,interpolate=true]{usnlogo}{usnlogo}
+%% rounded drop shadows for boxes
+\setbeamertemplate{blocks}[rounded][shadow=true]
 
-%% Name in footer 
+%% load pictures that are used one several slides
+\pgfdeclareimage[height=0.21\paperheight,interpolate=true]{usnlogo}{./figs/usnlogo}
+\pgfdeclareimage[height=16pt,interpolate=true]{usn}{./figs/usnlogo}
+
+%% Name in footer
 \newcommand{\usnfootername}{%
-{\fontsize{5pt}{5pt}\sffamily\bfseries\selectfont University of South-Eastern Norway}}
+{\fontsize{5pt}{5pt}\sffamily\bfseries\selectfont \raisebox{-1pt}{\pgfuseimage{usn}}~---~University of South-Eastern Norway}}
+
+%% Logo in footer
+\newcommand{\usnfooterlogo}{%
+{\raisebox{-7pt}{\pgfuseimage{usn}}}}
+\addtobeamertemplate{footline}{\vspace*{1pt}}{\vspace*{15pt}}
 
 % set only front page
 \defbeamertemplate{background canvas}{usn theme titlepage}%
@@ -81,10 +89,7 @@
 }
 
 \defbeamertemplate{footline}{usn theme titlepage}%
-{
-  \begin{pgfpicture}{0}{0}{\paperwidth}{1.5\usnspacing}
-    \pgfputat{\pgfpoint{\usnspacing}{0.5\usnspacing}}{\pgfbox[left,base]{\usnfootername}}
-  \end{pgfpicture}
+{% empty footline on title
 }
 
 \newcommand{\usntitlepage}{%
@@ -98,24 +103,24 @@
 }%
 }
 
-
-%% fonts and title formatting 
+%% fonts and title formatting
 \usefonttheme[onlymath]{serif}
 \setbeamerfont{frametitle}{family=\rmfamily}
 \setbeamerfont{title}{family=\rmfamily,series=\bfseries,size=\Large}
+\setbeamerfont{author}{series=\bfseries}
 \setbeamercolor{author}{fg=PMS2369U}
 \setbeamercolor{institute}{fg=PMS2369U}
 \setbeamercolor{date}{fg=PMS2369U}
 
-%% inner theme details 
+%% inner theme details
 \defbeamertemplate{itemize subitem}{dash}{\raisebox{0.6ex}{\rule{.4em}{1pt}}}
 \defbeamertemplate{itemize subsubitem}{dash}{\raisebox{0.6ex}{\rule{.4em}{1pt}}}
-\setbeamertemplate{itemize item}[circle]  % ball, circle, rectangle, default  
+\setbeamertemplate{itemize item}[circle]  % ball, circle, rectangle, default
 \setbeamertemplate{itemize subitem}[dash]
-\setbeamertemplate{itemize subsubitem}[dash]
+\setbeamertemplate{itemize subsubitem}[rectangle]
 %\setbeamertmeplate{itemize item subsubitem}[circle]
 %\setbeamertemplate{bibliography item}[text]
-\bibliographystyle{apalike} 
+\bibliographystyle{apalike}
 
 \setbeamertemplate{headline}{
      \begin{pgfpicture}{0}{0}{\paperwidth}{0.042\paperheight}
@@ -128,18 +133,22 @@
 \setbeamertemplate{footline}{
   \begin{pgfpicture}{0}{0}{\paperwidth}{1.5\usnspacing}
     \pgfputat{\pgfpoint{\usnspacing}{0.5\usnspacing}}{\pgfbox[left,base]{%
-        \parbox{\usnrulewidth}{\usnfootername  \hfill \insertframenumber / \inserttotalframenumber}
+        \parbox{\usnrulewidth}{\usnfooterlogo \hfill
+          \insertshorttitle ~ \insertshortsubtitle \hfill
+          \insertframenumber / \inserttotalframenumber}
      }}
   \end{pgfpicture}
+\vspace*{0.5\usnspacing} % add some padding at the very bottom
 }
 
 \defbeamertemplate*{title page}{usn}[1][]
 {
   \centering
+  \par\vfill
   {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
   {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}
-  {\color{PMS2400U} \rule{12pt}{0.5pt}}\par\vspace{2mm}
-  {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}
+  {\color{PMS2400U} \rule{9mm}{1pt}}\par\vspace{2mm}
+  {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}\vspace{2mm}
   {\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}
   {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}
   {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
