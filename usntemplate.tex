@@ -53,15 +53,16 @@
 \begin{frame}
   \frametitle{Fonts}
   \begin{itemize}
-  \item The university design manual states \emph{Times New Roman} and \emph{Calibri} to be used with Office-tools which \LaTeX isn't.
+  \item The \href{https://brandpad.io/usn}{university design manual} states that
+    \emph{ITC Clearface} and \emph{Maison Neue} are to be used.
     \begin{itemize}
     \item \textit{Times Roman} makes ``$v$'' looks like the greek ``$\nu$'' in math mode.
-    \item \textit{Calibri} is awkward to use on non Microsoft platforms
+    \item Neither of those are free and need to be purchased.
     \end{itemize}
   \item Default fonts are therefore:
     \begin{itemize}
-    \item for headings {\rmfamily Latin Modern Roman} instead of \emph{Times New Roman}
-    \item for normal text \emph{Carlito} instead of \emph{Calibri} (which is metric-compatible)
+    \item for headings {\rmfamily Latin Modern Roman} instead of \emph{Times New Roman} (which is a sugested system font in case \emph{ITC Clearface} can not be used.
+    \item for normal text \emph{OpenSans} instead of \emph{Maison Neue} (which is a close match)
     \end{itemize}
   \end{itemize}
   \vfill
@@ -75,10 +76,31 @@ Math is typeset like this:
 \end{align*}
 \end{frame}
 
-
 \begin{frame}
 \frametitle{Predefined colours}
+\framesubtitle{Used from 2023 on}
+\centering
 
+\begin{tabular}{llll}
+  Level 1                                              & Level 2                                            & Level 3                                                    \\
+  \hline                                                                                                                                                                 \\
+  {\color{lilla}\rule{3em}{2ex}} lilla                 & {\color{oransje}\rule{3em}{2ex}} oransje           & {\color{rosa}\rule{3em}{2ex}} rosa                         \\
+  {\color{medium-lilla}\rule{3em}{2ex}} medium-lilla   & {\color{beige}\rule{3em}{2ex}} beige               & {\color{medium-rosa}\rule{3em}{2ex}} medium-rosa           \\
+  {\color{lys-lilla}\rule{3em}{2ex}} lys-lilla         & {\color{medium-beige}\rule{3em}{2ex}} medium-beige & {\color{syregronn}\rule{3em}{2ex}} syregronn               \\
+                                                       & {\color{lys-beige}\rule{3em}{2ex}} lys-beige       & {\color{medium-syregronn}\rule{3em}{2ex}} medium-syregronn \\
+  {\color{indigo}\rule{3em}{2ex}} indigo               &                                                    &                                                            \\
+  {\color{medium-indigo}\rule{3em}{2ex}} medium-indigo &                                                    &                                                            \\
+  {\color{lys-indigo}\rule{3em}{2ex}} lys-indigo       & {\color{black}\rule{3em}{2ex}} black               & {\color{white}\rule{3em}{2ex}} white                       \\
+  \hline                                                                                                                                                                 \\
+\end{tabular}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Old predefined colours}
+\framesubtitle{Used from 2018 to 2023}
 \centering
 
 \begin{tabular}{llll}
