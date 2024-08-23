@@ -1,4 +1,4 @@
-\ProvidesClass{beamerthemeusn}[2018/06/25]
+\ProvidesClass{beamerthemeusn}[2024/08/23]
 
 \mode<presentation>
 
@@ -98,15 +98,6 @@
 \end{pgfpicture}%
 }
 
-\defbeamertemplate{headline}{usn theme titlepage}%
-{%
-     \begin{pgfpicture}{0}{0}{\paperwidth}{\paperheight}
-       \pgfputat{\pgfpoint{\usnspacing}{\usnrulestart}}{%
-       \pgfbox[left,base]{\color{lilla}\rule{\usnrulewidth}{0.01\paperheight}}
-       }
-     \end{pgfpicture}%
-}
-
 \defbeamertemplate{footline}{usn theme titlepage}%
 {% empty footline on title
 }
@@ -114,7 +105,6 @@
 \newcommand{\usntitlepage}{%
 {%
 \setbeamertemplate{background canvas}[usn theme titlepage]
-\setbeamertemplate{headline}[usn theme titlepage]
 \setbeamertemplate{footline}[usn theme titlepage]
 \begin{frame}%[plain]%
 \titlepage%
